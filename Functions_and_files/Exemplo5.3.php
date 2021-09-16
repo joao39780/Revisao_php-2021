@@ -1,7 +1,7 @@
 <?php 
 /*Exemplo5.3 - Definindo funções antes ou depois de chamá-las*/
 
-//
+//As funções podem ser definidas antes ou depois de serem chamadas. O engine PHP lê o arquivo do programa inteiro e toma conhecimento de todas  as definições de funções antes de executar qualquer comando existente no arquivo
 
 
 function page_header(){
