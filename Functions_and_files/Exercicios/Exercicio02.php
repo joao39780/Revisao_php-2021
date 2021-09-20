@@ -1,35 +1,29 @@
 <?php 
 /*Exercicio02.php*/
 
-$url_add = '../Exercicios/';
 
-function img_tag($file_name, $height = null, $width = null, $alt = null){
+function img_tag($file_name, $alt = null, $height = null, $width = null){
 
-global $url_add;
+    if(isset($GLOBALS['image_path'])){
+        $file_name = $GLOBALS['image_path'] . $file_name;
+    }
     
-    $html = '<img src="'.$url_add.'';
-    $html .= ''.$file_name.'"';
+    $html = '<img src="'. $file_name .'"';
     
+    if(isset($alt)){
+        $html .= 'alt="'. $alt .'"';
+    }
+
     if(isset($height)){
-
-    $html .= 'height="'. $height .'"';
-    
+        $html .= 'height="'. $height .'"';
     }
 
     if(isset($width)){
-
         $html .= 'width="'. $width .'"';
- }
+    }
 
- if(isset($alt)){
-    $html .= 'alt="'. $alt .'"';
- }
-
- $html .= '>';
-
-
- return $html;
-
+    $html .= '>';
+    return $html;
 }
 
 //$img = img_tag('a.jpeg', '200', '200', 'amigao?');
