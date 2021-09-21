@@ -9,7 +9,7 @@ class Entree{
 	public $name;
 	public $ingredients = array();
 
-	public function __construct($name $ingredients){
+	public function __construct($name, $ingredients){
 
 		if(! is_array($ingredients)){
 
