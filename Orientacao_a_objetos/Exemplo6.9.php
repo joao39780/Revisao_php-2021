@@ -23,4 +23,8 @@ try{
 }
 
 
+//cada uma das instruções do bloco try é executada e a execução para quando uma exceção é encontrada. Se isso ocorrer, o engine PHP pulará para baixo, para o bloco catch, configurando a variável $e para conter o objeto Exception que foi criado. O código do bloco catch usa método getMessage() da classe Exception para recuperar o texto da mensagem fornecida para a execução quando ela foi criada.
+
+
+
 ?>
