@@ -31,3 +31,13 @@ Tipo de método especial que pode ser chamado sem a instânciação de uma class
 ## Exceções
 Uma exceção é um objeto especial que pode ser usado para indicar que algo excepcional ocorreu. A criação de uma exceção interrompe o engine PHP e o transfere para um caminho
 diferente no código.
+O que complementa o lançamento de exceções é sua captura - interceptar a exceção antes que o engine PHP a pegue e ponha de lado. Para você mesmo manipular uma exceção, é preciso
+duas etapas:
+
+1. Inserir o código que pode lançar uma exceção dentro de um bloco try.
+2. Inserir um bloco catch que manipule o problema após o código que pode lançar a exceção.
+
+## Estendendo um objeto (Herança)
+Um dos aspectos dos objetos que os tornam tão úteis para a organização do código é a noção de subclasse, que permite a reutilização de uma classe ao mesmo tempo em que ela
+recebe alguma funcionalidade adicional. Incialmente, uma subclasse (ás vezes chamada de classe-filha) tem todos os métodos e propriedades de uma classe existente(a classe-pai),
+mas depois pode alterá-los ou adicionar o seus próprios.
