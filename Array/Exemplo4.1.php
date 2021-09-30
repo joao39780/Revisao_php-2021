@@ -12,7 +12,9 @@ $dinner = array(0 => 'Sweet Corn and Aspargus',
 
 
 
-
+$computers = array('trs-80' => 'Radio Shack',
+	          2600 => 'Atari',
+		  'Adam' => 'Coleco');
 
 
 
