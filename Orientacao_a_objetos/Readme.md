@@ -110,3 +110,13 @@ throw new Exception('$ingredients must be an array'); cria um novo objeto Except
 Se $ingredients for um array, o código será executado como antes. Se não for um array, a exceção será lançada. O Exemplo6.8 mostra a criação de um objeto Entree com um 
 argumento $ingredients inválido.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.8.php">Exemplo6.8</a></code>
+
+Foi bom termos impedido hasIngredient() de ser chamado para que ele não agisse sobre algo que não fosse um array de ingredientes, mas interromper totalmente o programa com uma
+mensagem de erro tão severa é exagero. O que complementa o lançamento de exceções é sua captura - interceptar a exceção entes que o engine PHP a pegue e ponha de lado.
+
+Para você mesmo manipular uma exceção é preciso executar duas etapas:
+1. Inserir o código que pode lançar uma exceção em um bloco try.
+2. Inserir um bloco catch que manipule o problema após o código que pode lançar a exceção.
+
+O exemplo6.9 adiciona os blocos try e catch que lidam com a exceção.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.9.php">Exemplo6.9</a></code>
