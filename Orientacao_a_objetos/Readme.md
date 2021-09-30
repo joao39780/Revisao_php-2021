@@ -60,3 +60,13 @@ instância de uma classe que esteja chamando a função. O Exemplo6.2 a mostra e
 O operador new retorna um novo objeto Entree, logo, no Exemplo6.2, $soup e $sandiwch referenciam instâncias diferentes da classe Entree.
 
 O operador de seta (->), composto por um hífen e um sinal de maior que, abre caminho para as propriedades (variáveis) e métodos (funções) de um objeto. Para acessar uma propriedade, insira a seta após o nome do objeto e insira a propriedade após a seta. Para chamar um método, insira o nome do método após a set, seguido pelo parênteses que indicam uma chamada de função.
+
+Dentro do loop foreach(), o método hasIngredient() de cada objeto é chamado. O método recebe o nome de um ingrediente e retorna se ele está ou não na lista de ingredientes do
+objeto. Aqui você pode ver como a variável especial $this funciona. Quando $soup->hasIngredient() é chamado, $this referencia $soup dentro do corpo de hasIngredient(). Quando
+$sandwich->hasIngredient() é chamado, $this referencia $sandwich. Nem sempre a variável $this referencia a mesma instância de objeto; em vez disso, ela referencia a isntância
+em que o objeto está sendo chamado.
+
+As classes também podem conter métodos estáticos. Esses métodos não podem usar a variável $this, já que não são executados no contexto de uma instância de objeto específica e
+sim na própria classe. Os métodos estáticos são úteis para finalidade da classe e não para algum objeto. O Exemplo6.3 adiciona um método estático a Entree, que retorna uma lista
+de tamanhos de pratos possiveis.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.3.php">Exemplo6.3</a></code>
