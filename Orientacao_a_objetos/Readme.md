@@ -41,3 +41,5 @@ duas etapas:
 Um dos aspectos dos objetos que os tornam tão úteis para a organização do código é a noção de subclasse, que permite a reutilização de uma classe ao mesmo tempo em que ela
 recebe alguma funcionalidade adicional. Incialmente, uma subclasse (ás vezes chamada de classe-filha) tem todos os métodos e propriedades de uma classe existente(a classe-pai),
 mas depois pode alterá-los ou adicionar o seus próprios.
+
+<code><hr></code>
