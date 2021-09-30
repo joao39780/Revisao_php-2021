@@ -12,3 +12,5 @@ chaves e as cores como valores, como mostra a figura abaixo.
 
 Um array só pode ter um único elemento com uma determinada chave. No array de cores dos vegetais, não pode haver outro elemento com a chave corn ainda que seu valor seja blue.
 No entanto, o mesmo valor pode aparecer muitas vezes no mesmo array. Você pode ter pimentas verdes, brocolis verde e aipo verde.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Array/Exemplo4.1.php">Exemplo4.1.php</a></code>
