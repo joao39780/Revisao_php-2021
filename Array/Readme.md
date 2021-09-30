@@ -8,4 +8,5 @@ Arrays são conjuntos de valores relacionados, como os dados enviados em um form
 Um array é composto por elementos. Cada elemento tem uma chave e um valor. Por exemplo, um array contendo informações sobre as cores dos vegetais teria os nomes dos vegetais como
 chaves e as cores como valores, como mostra a figura abaixo.
 
-![image](https://user-images.githubusercontent.com/80215258/135370223-4c116b3c-4777-497f-b8ef-bf85ef39c464.png)
+![image](https://user-images.githubusercontent.com/80215258/135370507-160cb782-6985-4c02-a60d-ca6f06000818.png)
+
