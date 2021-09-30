@@ -124,3 +124,17 @@ O exemplo6.9 adiciona os blocos try e catch que lidam com a exceção.
 No exemplo6.9, os blocos try e catch funcionam em conjunto. Cada uma das instruções do bloco try é executada e a execução para quando uma exceção é encontrada. Se isso ocorrer,
 o engine PHP pulará para baixo, para o bloco catch, configurando a variável $e para conter o objeto Exception que foi criado. O código do bloco catch usa o método getMessage()
 da classe Exception para recuperar o texto da mensagem fornecida para a exceção de quando ela foi criada.
+
+# Estendento um objeto
+Um dos aspectos dos objetos que os tornam tão úteis para a organização do código é a noção de subclasse, que permite a reutilização de uma classe ao mesmo tempo em que ela 
+recebe alguma funcionalidade adicional. Inicialmente, uma subclasse (as vezes chamada de classe-filha) tem todos os métodos e propriedades de uma classe existente 
+(a classe-pai), mas depois pode alterá-los ou adicionar os seus próprios.
+
+Por exemplo, considere uma refeição que não fosse composta por um único prato e sim por uma combinação de pratos, como no caso de serem servidos juntos uma tigela de sopa e um
+sanduíche. Nossa classe Entree seria forçada a modelar essa variação tratando "sopa" e "sanduíche" como ingredientes ou enumerando todas as sopas e sanduíches como parte do
+combo. Nenhuma dessas soluções é ideal: sopa e sanduíche não são ingredientes e renumerar todos os ingredientes significaria ter de fazer atualizações em vários locais quando
+algum ingrediente mudasse.
+
+Podemos resolver esse problema de maneira mais sensata criando uma subclasse de Entree que receba instâncias de objetos Entree como ingredientes, e modificando o método 
+hasIngredient() da subclasse para inspecionar os ingredientes dessas instâncias. O código dessa classe ComboMeal é mostrado no Exemplo6.10
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.10.php">Exemplo6.10</a></code>
