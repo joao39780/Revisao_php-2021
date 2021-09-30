@@ -10,3 +10,5 @@ chaves e as cores como valores, como mostra a figura abaixo.
 
 ![image](https://user-images.githubusercontent.com/80215258/135370507-160cb782-6985-4c02-a60d-ca6f06000818.png)
 
+Um array só pode ter um único elemento com uma determinada chave. No array de cores dos vegetais, não pode haver outro elemento com a chave corn ainda que seu valor seja blue.
+No entanto, o mesmo valor pode aparecer muitas vezes no mesmo array. Você pode ter pimentas verdes, brocolis verde e aipo verde.
