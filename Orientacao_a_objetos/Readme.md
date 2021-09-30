@@ -94,3 +94,16 @@ O construtor é chamado pelo operador new como parte do que o engine PHP faz par
 construtora não retorna um valor e não pode usar um valor de retorno para sinalizar que algo deu errado. Essa é uma tarefa para as exceções discutidas na próxima seção.
 
 # Indicando um problema com exceções
+No Exemplo6.5, o que aconteceria se algo diferente de um array fosse passado como  o argumento $ingredients? Da maneira como o código foi escrito, nada! $this->ingredients
+recebe o valor de  $ingredients não importa qual seja. Porém, se ele não for um array, isso causará problemas quando hasIngredients() for chamado. 
+
+Os construtores são ótimos para verificar se os argumentos têm o tipo certo, ou pelo menos apropriado. No entanto, precisam de uma maneira de avisar se houver um problema. É 
+nesse momento que uma exceção pode ajudar. Uma exceção é um objeto especial que pode ser usado para indicar que algo excepcional ocorreu. A criação de uma exceção interrompe o
+Engine PHP e o transfere para um caminho diferente no código.
+
+O Exemplo6.7 modifica o construtor de Entree para que lance uma exceção se o argumento $ingredients não estiver no array.("Lançar" uma exceção signifca usar um exceção para informar ao engine PHP que algo deu errado.)
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.7.php">Exemplo6.7</a></code>
+
+
+
+
