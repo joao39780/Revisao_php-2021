@@ -90,6 +90,7 @@ Para passar argumentos para o construtor, trate o nome da classe como um nome de
 O Exemplo6.6 mostra nossa classe com o construtor em ação criando objetos $soup e $sandwich idênticos aos que usamos anteriormente.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.6.php">Exemplo6.6</a></code>
 
+O construtor é chamado pelo operador new como parte do que o engine PHP faz para criar um novo objeto, mas não é o construtor que cria o objeto. Isso significa que a função 
+construtora não retorna um valor e não pode usar um valor de retorno para sinalizar que algo deu errado. Essa é uma tarefa para as exceções discutidas na próxima seção.
 
-
-
+# Indicando um problema com exceções
