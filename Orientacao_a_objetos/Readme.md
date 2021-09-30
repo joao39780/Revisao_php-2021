@@ -152,3 +152,15 @@ Isso funciona bem, mas não temos garantia de que os itens passados para o const
 causar um erro. Para corrigir esse problema, precisamos adicionar um construtor personalizado a ComboMeal que verifique essa condição e também chame o construtor comum de Entree
 para que as propriedades sejam definidas apropriadamente. Uma versão de ComboMeal com esse construtor é mostrada no Exemplo6.12.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.12.php">Exemplo6.12</a></code>
+
+O construtor do Exemplo6.12 usa a sintaxe especial parent::__ construct() para referenciar o construtor de Entree. Assim como $this tem um significado próprio dentro dos métodos
+de objetos, o mesmo ocorre com a palavra parent. Ela referencia a classe da qual classe atual é subclasse. Já que ComboMeal estende Entree. Logo, parent::__ construct() dentro
+de ComboMeal referencia o método construct() da classe Entree.
+
+Em construtores de subclasses, é importante lembrar que você precisa chamar o construtor pai explicitamente. Se deixar de fora a chamada parent::__ construct(), o construtor pai
+nunca será chamado e seu comportamento presumivelmente essencial não será executado pelo Engine PHP. Nesse caso, o construtor de Entree verifica se $ingredients é um array e 
+define as propriedades $name e $ingredients.
+
+Após a chamada a parent::__ construct(), o construtor de ComboMeal verifica se cada ingrediente fornecido para o combo é um objeto Entree. Ele usa o operador instanceof para 
+fazê-lo. A expressão $entree instanceof Entree será avaliada como true se $entree referenciar uma instância de objeto da classe Entree. Se algum dos ingredientes fornecidos
+(que, para ComboMeal, são entradas) não for um objeto Entree, o código lançará uma exceção.
