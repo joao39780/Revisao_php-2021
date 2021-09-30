@@ -47,3 +47,12 @@ mas depois pode alterá-los ou adicionar o seus próprios.
 # Aspectos básicos dos objetos
 O Exemplo6.1 define uma classe Entree para representar uma refeição
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.1.php">Exemplo6.1</a></code>
+
+No Exemplo6.1, a definição da classe começa com a palavra-chave especial class, seguida pelo nome que estamos dando à classe. Após o nome da classe, tudo que se encontra entre
+chaves é sua definição - suas propriedades e métodos. Essa classe tem duas propriedades ($name e $ingredients) e um método (hasIngredient()).
+
+A palavra public informa ao engine PHP que partes do programa podem acessar a propriedade ou o método específico ao qual ela está associada.
+
+O método hasIngredient() parece mais com uma definição de função comum, mas seu corpo contém algo novo: $this. Essa é uma variável especial que referencia qualquer que seja a
+instância de uma classe que esteja chamando a função. O Exemplo6.2 a mostra em ação com duas instâncias diferentes.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.2.php">Exemplo6.1</a></code>
