@@ -43,3 +43,7 @@ recebe alguma funcionalidade adicional. Incialmente, uma subclasse (ás vezes ch
 mas depois pode alterá-los ou adicionar o seus próprios.
 
 <code><hr></code>
+
+# Aspectos básicos dos objetos
+O Exemplo6.1 define uma classe Entree para representar uma refeição
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.1.php">Exemplo6.1</a></code>
