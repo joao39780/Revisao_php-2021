@@ -81,3 +81,15 @@ que tornam o objeto pronto para uso. Por exemplo, poderíamos alterar a classe E
 refeição e a lista de ingredientes. Passando esses valores para o construtor, evitamos ter de definir as propriedades após o objeto ser criado. Em PHP, o método construtor de
 uma classe se chama sempre construct(). o Exemplo6.5 mostra a classe alterada com seu método construtor.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.5.php">Exemplo6.5</a></code>
+
+No exemplo 6.5, é possivel ver que o método __ construct() aceita dois argumentos e atribui seus valores às propriedades da classe. O fato de os nomes dos argumentos coincidirem
+com os nomes das propriedades é apenas uma conveniência - o engine PHP não exige que sejam iguais. Dentro de um construtor, a palavra-chave $this referencia a instância de
+objeto específica que esta sendo construida.
+
+Para passar argumentos para o construtor, trate o nome da classe como um nome de função ao chamar o operador new inserindo parênteses e os valores dos argumentos depois dele.
+O Exemplo6.6 mostra nossa classe com o construtor em ação criando objetos $soup e $sandwich idênticos aos que usamos anteriormente.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.6.php">Exemplo6.6</a></code>
+
+
+
+
