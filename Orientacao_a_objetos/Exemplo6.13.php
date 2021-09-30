@@ -6,7 +6,7 @@ class Entree{
 	private $name;
 	protected $ingredients = array();
 
-	getName(){
+	public function getName(){
 		return $this->name;
 	}
 
