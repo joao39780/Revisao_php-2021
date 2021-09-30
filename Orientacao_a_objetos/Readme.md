@@ -70,3 +70,7 @@ As classes também podem conter métodos estáticos. Esses métodos não podem u
 sim na própria classe. Os métodos estáticos são úteis para finalidade da classe e não para algum objeto. O Exemplo6.3 adiciona um método estático a Entree, que retorna uma lista
 de tamanhos de pratos possiveis.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.3.php">Exemplo6.3</a></code>
+
+A declaração do método estático no Exemplo6.3 é semelhante a outras definições de métodos, como o acrésimo da palavra-chave static antes de function. Para chamar um método 
+estático, é preciso inserir dois pontos duplos (::) entre o nome da classe e o nome do método em vez de ->, como mostrado no Exemplo6.4
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.4.php">Exemplo6.4</a></code>
