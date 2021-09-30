@@ -146,4 +146,4 @@ método hasIngredient(). Em vez de examinar $this->ingredients como antes, estam
 objetos. Se alguma das chamadas retornar true, isso signifca que uma dos pratos do combo tem o ingrediente especifícado, logo, o método hasIngredient() de ComboMeal retornará
 true. Se após a iteração por todos os pratos, nada tiver retornado true, o método retornará false, ou seja, nenhum prato tem o ingrediente. O Exemplo6.11 mostra a subclasse
 em ação.
-<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.10.php">Exemplo6.10</a></code>
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.11.php">Exemplo6.11</a></code>
