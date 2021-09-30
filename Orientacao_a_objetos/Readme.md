@@ -138,3 +138,12 @@ algum ingrediente mudasse.
 Podemos resolver esse problema de maneira mais sensata criando uma subclasse de Entree que receba instâncias de objetos Entree como ingredientes, e modificando o método 
 hasIngredient() da subclasse para inspecionar os ingredientes dessas instâncias. O código dessa classe ComboMeal é mostrado no Exemplo6.10
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.10.php">Exemplo6.10</a></code>
+
+No Exemplo6.10, o nome da classe, ComboMeal, é seguido por extends Entree. Isso informa ao engine PHP que a classe ComboMeal deve herdar todos os métodos e propriedades da 
+classe Entree. Para o engine, é como se você redigita-se a definição de Entree dentro da definição de ComboMeal, o que pode ser feito sem ser preciso todo o tedioso trabalho
+de digitação. Em seguida, as únicas coisas que precisam estar dentro das chaves da definição de ComboMeal são alterações ou acrésimos. Nesse caso a única alteração é um novo
+método hasIngredient(). Em vez de examinar $this->ingredients como antes, estamos tradando-a como um array de objetos Entree e chamando o método hasIngredient em cada um desses
+objetos. Se alguma das chamadas retornar true, isso signifca que uma dos pratos do combo tem o ingrediente especifícado, logo, o método hasIngredient() de ComboMeal retornará
+true. Se após a iteração por todos os pratos, nada tiver retornado true, o método retornará false, ou seja, nenhum prato tem o ingrediente. O Exemplo6.11 mostra a subclasse
+em ação.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.10.php">Exemplo6.10</a></code>
