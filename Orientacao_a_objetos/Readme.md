@@ -174,3 +174,4 @@ visibilidade não alteram o que o código da classe pode fazer - ele pode sempre
 classe acessem a propriedade. A visibilidade protegida (protected) significa que o único código externo à classe que pode acessar a propriedade é o código da subclasses.
 
 O Exemplo6.13 mostra uma versão modificada da classe Entree em que a propriedade $name é privada e a propriedade $ingredients é protegida
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.13.php">Exemplo6.13</a></code>
