@@ -164,3 +164,13 @@ define as propriedades $name e $ingredients.
 Após a chamada a parent::__ construct(), o construtor de ComboMeal verifica se cada ingrediente fornecido para o combo é um objeto Entree. Ele usa o operador instanceof para 
 fazê-lo. A expressão $entree instanceof Entree será avaliada como true se $entree referenciar uma instância de objeto da classe Entree. Se algum dos ingredientes fornecidos
 (que, para ComboMeal, são entradas) não for um objeto Entree, o código lançará uma exceção.
+
+# Visibilidade de propriedades e métodos
+O construtor de ComboMeal do Exemplo6.12 faz um ótimo trabalho verificando se um ComboMeal só esta recebendo instâncias de Entree como seus ingredientes. Porém o que ocorre
+depois disso? O código subsequente poderia alterar o valor da propriedade $ingredients para alguma outra coisa - Um array de objetos não Entree, um número ou até mesmo false.
+
+Podemos evitar esse problema alterando a visibilidade das propriedades. Em vez de public, poderíamos rotulá-las como private ou protected. Essas outras configurações de 
+visibilidade não alteram o que o código da classe pode fazer - ele pode sempre ler ou gravar suas propriedades. A visibilidade privada (private) impede que códigos externos à
+classe acessem a propriedade. A visibilidade protegida (protected) significa que o único código externo à classe que pode acessar a propriedade é o código da subclasses.
+
+O Exemplo6.13 mostra uma versão modificada da classe Entree em que a propriedade $name é privada e a propriedade $ingredients é protegida
