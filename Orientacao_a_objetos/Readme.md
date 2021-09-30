@@ -55,4 +55,8 @@ A palavra public informa ao engine PHP que partes do programa podem acessar a pr
 
 O método hasIngredient() parece mais com uma definição de função comum, mas seu corpo contém algo novo: $this. Essa é uma variável especial que referencia qualquer que seja a
 instância de uma classe que esteja chamando a função. O Exemplo6.2 a mostra em ação com duas instâncias diferentes.
-<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.2.php">Exemplo6.1</a></code>
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.2.php">Exemplo6.2</a></code>
+
+O operador new retorna um novo objeto Entree, logo, no Exemplo6.2, $soup e $sandiwch referenciam instâncias diferentes da classe Entree.
+
+O operador de seta (->), composto por um hífen e um sinal de maior que, abre caminho para as propriedades (variáveis) e métodos (funções) de um objeto. Para acessar uma propriedade, insira a seta após o nome do objeto e insira a propriedade após a seta. Para chamar um método, insira o nome do método após a set, seguido pelo parênteses que indicam uma chamada de função.
