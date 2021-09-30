@@ -104,6 +104,9 @@ Engine PHP e o transfere para um caminho diferente no código.
 O Exemplo6.7 modifica o construtor de Entree para que lance uma exceção se o argumento $ingredients não estiver no array.("Lançar" uma exceção signifca usar um exceção para informar ao engine PHP que algo deu errado.)
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.7.php">Exemplo6.7</a></code>
 
+As exceções são representadas pela classe Exception. O primeiro argumento do construtor de exception é uma string que descreve o que ocorreu de errado. Logo, a linha
+throw new Exception('$ingredients must be an array'); cria um novo objeto Exception e, em seguida, o passa para a estrutura throw, a fim de interromper o engine PHP.
 
-
-
+Se $ingredients for um array, o código será executado como antes. Se não for um array, a exceção será lançada. O Exemplo6.8 mostra a criação de um objeto Entree com um 
+argumento $ingredients inválido.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.8.php">Exemplo6.8</a></code>
