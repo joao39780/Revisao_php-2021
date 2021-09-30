@@ -147,3 +147,8 @@ objetos. Se alguma das chamadas retornar true, isso signifca que uma dos pratos 
 true. Se após a iteração por todos os pratos, nada tiver retornado true, o método retornará false, ou seja, nenhum prato tem o ingrediente. O Exemplo6.11 mostra a subclasse
 em ação.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.11.php">Exemplo6.11</a></code>
+
+Isso funciona bem, mas não temos garantia de que os itens passados para o construtor de ComboMeal são realmente objetos Entree. Se não forem, chamar hasIngredient() neles pode 
+causar um erro. Para corrigir esse problema, precisamos adicionar um construtor personalizado a ComboMeal que verifique essa condição e também chame o construtor comum de Entree
+para que as propriedades sejam definidas apropriadamente. Uma versão de ComboMeal com esse construtor é mostrada no Exemplo6.12.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.12.php">Exemplo6.12</a></code>
