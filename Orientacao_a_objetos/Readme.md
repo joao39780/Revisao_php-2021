@@ -120,3 +120,7 @@ Para você mesmo manipular uma exceção é preciso executar duas etapas:
 
 O exemplo6.9 adiciona os blocos try e catch que lidam com a exceção.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.9.php">Exemplo6.9</a></code>
+
+No exemplo6.9, os blocos try e catch funcionam em conjunto. Cada uma das instruções do bloco try é executada e a execução para quando uma exceção é encontrada. Se isso ocorrer,
+o engine PHP pulará para baixo, para o bloco catch, configurando a variável $e para conter o objeto Exception que foi criado. O código do bloco catch usa o método getMessage()
+da classe Exception para recuperar o texto da mensagem fornecida para a exceção de quando ela foi criada.
