@@ -74,3 +74,10 @@ de tamanhos de pratos possiveis.
 A declaração do método estático no Exemplo6.3 é semelhante a outras definições de métodos, como o acrésimo da palavra-chave static antes de function. Para chamar um método 
 estático, é preciso inserir dois pontos duplos (::) entre o nome da classe e o nome do método em vez de ->, como mostrado no Exemplo6.4
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.4.php">Exemplo6.4</a></code>
+
+# Construtores
+Uma classe pode ter um método especial, chamado construtor, que é executado quando o objeto é criado. Normalmente, os construtores manipualm tarefas de configuração e manutenção
+que tornam o objeto pronto para uso. Por exemplo, poderíamos alterar a classe Entree e fornecer um construtor para ela. Esse construtor recebe dois argumentos: o nome da 
+refeição e a lista de ingredientes. Passando esses valores para o construtor, evitamos ter de definir as propriedades após o objeto ser criado. Em PHP, o método construtor de
+uma classe se chama sempre construct(). o Exemplo6.5 mostra a classe alterada com seu método construtor.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.5.php">Exemplo6.5</a></code>
