@@ -175,3 +175,29 @@ classe acessem a propriedade. A visibilidade protegida (protected) significa que
 
 O Exemplo6.13 mostra uma versão modificada da classe Entree em que a propriedade $name é privada e a propriedade $ingredients é protegida
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.13.php">Exemplo6.13</a></code>
+
+Como no Exemplo6.13 $name é privada, não há como  lê-la ou alterá-la a partir de um código que esteja fore de Entree. No entanto, o método getName() adicionado fornece uma 
+maneira de códigos fora de Entree  obterem o valor de $name. Esse tipo  de método é chamado de acessor. Ele da acesso  a uma propriedade que de outra forma teria o acesso 
+proibido. Nesse caso, a combinação da visibilidade privada e de um acessor, que retorna o valor da propriedade, permite que qualquer código leia o valor de $name, mas nada
+que estiver fora de Entree poderá alterar o valor de $name depois que ele for configurado.
+
+A propriedade $ingredients, por outro lado, é protegida, o que permite que seja acesssada a partir de subclasses. Isso assegura que o método hasIngredient() de ComboMeal
+funcione apropriadamente.
+
+# Namespaces
+A partir da versão 5.4, o engine PHP permite organizar o código em namespaces, os namespaces fornecem uma maneira de agruparmos códigos relacionados e de assegurar que os nomes
+das classes que criamos não entrem em conflito com classes de nome idêntico criadas por outro indivíduo.
+
+É importante que você se familiarize com os namespaces para poder incorporar aos seus programas pacotes criados por outras pessoas.
+
+Podemos considerar um namespace como um contêiner que pode armazenar definições de classes ou outros namespaces. É uma coneniência sintática e não uma nova funcionalidade. Quando você se deparar com a palavra-chave namespace ou algumas barras invertidas no que parece ser um nome de classe, terá encontrado uma namespace PHP.
+
+Para definir uma classe dentro de um namespace específico, use a palavra-chave namespace no início de um arquivo com o nome de uma namespace. Assim, uma definição de classe posterior do arquivo criará a classe dentro desse namespace. O Exemplo6.14 define uma classe fruit dentro do namespace Tiny.
+
+
+
+
+
+
+
+
