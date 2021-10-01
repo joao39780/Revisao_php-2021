@@ -193,6 +193,7 @@ das classes que criamos não entrem em conflito com classes de nome idêntico cr
 Podemos considerar um namespace como um contêiner que pode armazenar definições de classes ou outros namespaces. É uma coneniência sintática e não uma nova funcionalidade. Quando você se deparar com a palavra-chave namespace ou algumas barras invertidas no que parece ser um nome de classe, terá encontrado uma namespace PHP.
 
 Para definir uma classe dentro de um namespace específico, use a palavra-chave namespace no início de um arquivo com o nome de uma namespace. Assim, uma definição de classe posterior do arquivo criará a classe dentro desse namespace. O Exemplo6.14 define uma classe fruit dentro do namespace Tiny.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.14.php">Exemplo6.14</a></code>
 
 
 
