@@ -195,6 +195,11 @@ Podemos considerar um namespace como um contêiner que pode armazenar definiçõ
 Para definir uma classe dentro de um namespace específico, use a palavra-chave namespace no início de um arquivo com o nome de uma namespace. Assim, uma definição de classe posterior do arquivo criará a classe dentro desse namespace. O Exemplo6.14 define uma classe fruit dentro do namespace Tiny.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Orientacao_a_objetos/Exemplo6.14.php">Exemplo6.14</a></code>
 
+Para usar uma classe definida em um namespace, é preciso incorporar o namespace a como você referencia a classe. A maneira mais clara de fazer isso é começar com uma \ 
+(o namespace de nivel superior), escrever o nome do namespace em que a classe está, adicionar outra barra invertida (\) e então escrever o nome da classe. Por exemplo, para
+chamar munch() na classe Fruit definida no Exemplo6.14, escreva
+  
+    \Tiny\Fruit::munch("banana");
 
 
 
