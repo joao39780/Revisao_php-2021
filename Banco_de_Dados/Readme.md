@@ -43,4 +43,29 @@ executado sem precisar recriá-la. Se uma tabela de banco de dados é como uma p
 você pode abri-lo várias vezes fazer leituras ou alterações.
 
 O comando SQL para a criação de uma tabela é CREATE TABLE. É preciso fornecer o nome da tabela e os nomes e tipos de todas as colunas. O Exemplo8.3 mostra o comando SQL que cria
-a tabela dishes mostrada na figura8.1
+a tabela dishes mostrada na figura8.1.
+
+    CREATE TABLE dishes(
+        dish_id INTEGER PRIMARY KEY,
+        dish_name VARCHAR(255),
+        price DECIMAL(4,2),
+        is_spicy INT
+        )
+
+Para criar realmente a tabela, você precisa enviar o comando CREATE TABLE para o banco de dados. Após conectar-se com new PDO(), use a função exec() para enviar o comando como
+mostrado no Exemplo8.3
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.3.php">Exemplo8.3</a></code>
+
+A próxma seção explicará exec com mais detalhes. A chamada a $db->setAttribute() no Exemplo8.3 assegura que PDO lançe exceções se houver problemas com as consultas e não apenas
+quando houver problemas na conexão. A manipulação de erros com o PDO também sera discutida na próxima seção.
+
+O oposto de CREATE TABLE é DROP TABLE. Ele remove uma tabela e os dados existentes nela de um banco de dados. O Exemplo8.5 mostra a sintaxe de uma consulta que remove a tabela dishes.
+    
+    DROP TABLE dishes
+
+Uma vez que você remover a tabela, ela desaparecerá definitivamente, logo, tome cuidado com DROP TABLE!
+
+## Inserindo dados no banco de dados
+Supondo que a conexão seja bem-sucedida, o objeto retornado por new PDO() dará acesso aos dados de seu banco de dados. Chamar as funções desse objeto permitirá que você envie
+consultas para o programa de banco de dados e acesse os resultados. Para inserir alguns dados no banco de dados, passe uma instrução INSERT para o método exec() do objeto, como
+mostrado no Exemplo8.6
