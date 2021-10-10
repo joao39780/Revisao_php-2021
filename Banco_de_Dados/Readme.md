@@ -73,4 +73,11 @@ O método exec() retorna o número de linhas afetadas pela instrução SQL que f
 porque apenas uma linha (a que você inseriu) foi afetada.
 
 Se algo der errado com INSERT, uma exceção será lançada. O Exemplo8.7 tenta executar uma instrução INSERT quem tem o nome de coluna inválido. A tabela dishes não contém uma
-coluna chamada dish_size.Couldn't insert a row: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list'
+coluna chamada dish_size.
+
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.7.php">Exemplo8.7</a></code>
+
+Já que a chamada a $db->setAttribute() instrui o PDO a lançar uma exceção sempre que houver um erro, o Exemplo8.7 exibe:
+
+    Couldn't insert a row: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list'
