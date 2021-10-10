@@ -66,3 +66,11 @@ a tabela dishes.
 Supondo que a conexão seja bem-sucedida, o objeto retornado por new PDO dará acesso aos dados de seu banco de dados. Chamar funções desse objeto permitirá que você envie
 consultas para o programa de banco de dados e acesse os resultados. Para inserir alguns dados no banco de dados, passe uma instrução INSERT para o método exec() do objeto,
 como mostrado no Exemplo8.6.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.6.php">Exemplo8.6</a></code>
+
+O método exec() retorna o número de linhas afetadas pela instrução SQL que foi enviada para o servidor do banco de dados. Nesse caso, a inserção de uma única linha retorna 1
+porque apenas uma linha (a que você inseriu) foi afetada.
+
+Se algo der errado com INSERT, uma exceção será lançada. O Exemplo8.7 tenta executar uma instrução INSERT quem tem o nome de coluna inválido. A tabela dishes não contém uma
+coluna chamada dish_size.
