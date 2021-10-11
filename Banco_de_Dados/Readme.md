@@ -92,3 +92,13 @@ O modo silencioso é o padrão. Como outros métodos do PDO, se exec() falhar em
 método errorInfo() do PDO para obter detalhes do problema.
 
  
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.8.php">Exemplo8.8</a></code>
+
+No Exemplo8.8, o valor de retorno de exec() é comparado com false com o uso do operador de identidade de sinal triplo para diferenciarmos um erro real (false) de uma consulta 
+bem-sucedida que simplesmente não está afetando nenhuma linha. Em seguida, errorInfo() retorna um array com três elementos com informações de erro. O primeiro elemento é um
+código de erro SQLSTATE. Esses códigos de erro estão em grande parte padronizados entre os diferentes programas de banco de dados. Nesse caso HY000 é um valor abrangente para
+erros em geral. O segundo elemento é um código de erro específico do programa de banco de dados que está sendo usado. O terceiro elemento é uma mensagem textual descrevendo o 
+erro.
+
+O modo de aviso é ativado com a configuraçãop do atributo PDO::ATTR_ERRMODE com PDO::ERRMODE_WARNING, como mostrado no Exemplo8.9. Nesse modo, as função se comportam como no 
+modo silencioso - sem exceções, retornando false em caso de erro - mas o engine PHP também gera uma mensagem de erro de nível de aviso.
