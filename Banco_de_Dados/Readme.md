@@ -116,4 +116,11 @@ Use a função exec para alterar dados com UPDATE. O Exemplo8.15 mostra algumas 
 
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.15.php">Exemplo8.15</a></code>
 
-Você também pode usar a função exec() para excluir dados com DELETE. O Exemplo8.16 mostra exec() com duas instruções DELETE
+Você também pode usar a função exec() para excluir dados com DELETE. O Exemplo8.16 mostra exec() com duas instruções DELETE.
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.16.php">Exemplo8.16</a></code>
+
+![image](https://user-images.githubusercontent.com/80215258/136851851-7fbb3126-6d8a-4dee-b62a-058212d5d136.png)
+![image](https://user-images.githubusercontent.com/80215258/136851893-69cb599e-2d27-46ec-9abe-a493421df9fc.png)
+
+Lembre-se que exec() retorna o número de linhas alteradas ou removidas por uma instrução UPDATE ou DELETE. Use o valor de retorno para saber quantas linhas essa consulta afetou.
+O Exemplo8.21 informa quantas linhas tiveram seus preços alterados por uma consulta UPDATE.
