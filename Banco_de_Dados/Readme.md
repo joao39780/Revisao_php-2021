@@ -102,3 +102,4 @@ erro.
 
 O modo de aviso é ativado com a configuraçãop do atributo PDO::ATTR_ERRMODE com PDO::ERRMODE_WARNING, como mostrado no Exemplo8.9. Nesse modo, as função se comportam como no 
 modo silencioso - sem exceções, retornando false em caso de erro - mas o engine PHP também gera uma mensagem de erro de nível de aviso.
+Warning: PDO::exec(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list' in /var/www/html/Revisao_php-2021/Banco_de_Dados/Exemplo8.9.php on line 6
