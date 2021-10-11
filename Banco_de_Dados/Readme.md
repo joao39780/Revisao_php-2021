@@ -102,4 +102,14 @@ erro.
 
 O modo de aviso é ativado com a configuraçãop do atributo PDO::ATTR_ERRMODE com PDO::ERRMODE_WARNING, como mostrado no Exemplo8.9. Nesse modo, as função se comportam como no 
 modo silencioso - sem exceções, retornando false em caso de erro - mas o engine PHP também gera uma mensagem de erro de nível de aviso.
-Warning: PDO::exec(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list' in /var/www/html/Revisao_php-2021/Banco_de_Dados/Exemplo8.9.php on line 6
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.9.php">Exemplo8.9</a></code>
+
+O Exemplo8.9 produz a mesma saída do Exemplo8.8, mas também gera a mensagem de erro a seguir:
+
+    Warning: PDO::exec(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list' in /var/www/html/Revisao_php-2021/Banco_de_Dados/Exemplo8.9.php on line 6
+
+![image](https://user-images.githubusercontent.com/80215258/136810847-5af97298-3565-4d50-af8e-2645862f3ea4.png)
+![image](https://user-images.githubusercontent.com/80215258/136810905-4526e732-209b-47b9-80c2-b4a801fde524.png)
+
+Use a função exec para alterar dados com UPDATE. O Exemplo8.15 mostra algumas instruções com UPDATE.
