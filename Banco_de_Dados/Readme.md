@@ -113,3 +113,7 @@ O Exemplo8.9 produz a mesma saída do Exemplo8.8, mas também gera a mensagem de
 ![image](https://user-images.githubusercontent.com/80215258/136810905-4526e732-209b-47b9-80c2-b4a801fde524.png)
 
 Use a função exec para alterar dados com UPDATE. O Exemplo8.15 mostra algumas instruções com UPDATE.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.15.php">Exemplo8.15</a></code>
+
+Você também pode usar a função exec() para excluir dados com DELETE. O Exemplo8.16 mostra exec() com duas instruções DELETE
