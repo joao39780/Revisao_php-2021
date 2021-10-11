@@ -84,8 +84,10 @@ Já que a chamada a $db->setAttribute() instrui o PDO a lançar uma exceção se
     
 O PDO tem três modos de erro: de exceção, silencioso e de aviso. O modo de erro de exceção, que é ativado com uma chamada a $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION), é o melhor para a depuração e o que o torna mais fácil assegurar que nenhum problema que ocorrer no banco de dados será deixado de lado. Se você não
 manipular uma exceção que o PDO gerar, seu programa parará de ser executado.
+
 Os outros dois modos de erro requerem a verificação dos valores de retorno das chamadas de função do PDO para determinarmos se há um erro e usarmos os métodos adicionais do PDO
 para encontrar informações sobre ele.
+
 O modo silencioso é o padrão. Como outros métodos do PDO, se exec() falhar em sua tarefa, ele retornará false. O Exemplo8.8 verifica o valor de retorno de exec() e então usa o
 método errorInfo() do PDO para obter detalhes do problema.
 
