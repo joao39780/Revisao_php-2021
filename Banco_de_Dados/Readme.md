@@ -54,3 +54,22 @@ a tabela dishes mostrada na Figura 8.1.
 
 Para realmente criar a tabela, você precisa enviar o comando CREATE TABLE para o bancod de dados. Após conectar-se com new PDO(), use a função exec() para enviar o comando
 como mostrado no Exemplo8.4
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.4.php">Exemplo8.4</a></code>
+
+A próxima seção explicará exec() com mais detalhes. A chamada a $db->setAttribute() no Exemplo8.4 assegura que o PDO lançe exceções se houver problemas com as consultas e não 
+apenas quando houver problemas na conexão. A manipulação de erros com PDO também será discutida na próxima seção.
+
+O oposto de CREATE TABLE é o comando DROP TABLE. Ele remover uma tabela e os dados existentes nela de um banco de dados. O Exemplo8.5 mostra a sintaxe de uma consulta que remove
+a tabela dishes.
+
+	Exemplo8.5 - Removendo uma tabela
+		
+		DROP TABLE dishes
+
+Uma vez que você remover a tabela, ela desaparecerá definitivamente, logo, tome cuidade com DROP TABLE!
+
+## Inserindo dados no banco de dados
+Supondo que a conexão seja bem-sucedida, o objeto retornado por new PDO() dará acesso aos dados de seu banco de dados. Chamar funções desse objeto permitirá que você enive
+consultas para o programa de banco de dados e acesse os resultados. Para inserir alguns dados no banco de dados, passe uma instrução INSERT para o método exec() do objeto, como
+mostrado no Exemplo8.6.
