@@ -33,3 +33,24 @@ para o bloco catch, onde uma mensagem de erro será exibida.
 Suponhamos que admin fosse a senha errada para o usuário admin. Nesse caso, o Exemplo8.2 exibiria algo como:
 
 	Could not connect to the database: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)
+
+## Criando uma tabela
+Antes de você pode inserir ou recuperar qualquer dado em uma tabela de banco de dados, você deve criar a tabela. Geralmente essa é uma operação que se executa uma única vez.
+So precisamos pedir ao programa de banco de dados que crie uma nova tabela uma vez. O programa PHP que usa a tabela poderá fazer leituras ou gravações nela sempre que for 
+executado sem precisar recriá-la. Se uma tabela de banco de dados é como uma nova planilha, então criar uma tabela é como criar o arquivo de uma nova planilha. Após cria o
+arquivo, você pode abri-lo várias vezes para fazer leituras ou alterações.
+
+O comando SQL para a criação de uma tabela é CREATE TABLE. É preciso fornecer o nome da tabela e os nomes e tipos de todas as colunas. O Exemplo8.3 mostra o comando SQL que cria
+a tabela dishes mostrada na Figura 8.1.
+
+	Exemplo8.3 - Criando a tabela dishes
+	
+	CREATE TABLE dishes(
+		dish_id INTEGER PRIMARY KEY,
+		dish_name VARCHAR(255),
+		price DECIMAL(4,2),
+		is_spicy INT
+	)
+
+Para realmente criar a tabela, você precisa enviar o comando CREATE TABLE para o bancod de dados. Após conectar-se com new PDO(), use a função exec() para enviar o comando
+como mostrado no Exemplo8.4
