@@ -32,3 +32,4 @@ para o bloco catch, onde uma mensagem de erro será exibida.
 
 Suponhamos que admin fosse a senha errada para o usuário admin. Nesse caso, o Exemplo8.2 exibiria algo como:
 
+	Could not connect to the database: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)
