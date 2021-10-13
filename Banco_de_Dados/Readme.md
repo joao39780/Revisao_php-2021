@@ -113,3 +113,12 @@ elemento é um código de erro específico do programa de banco de dados que est
 
 O modo de aviso é ativado com a configuração do atributo PDO::ATTR_ERRMODE com PDO::ERRMODE_WARNING, como mostrado no Exemplo8.9. Nesse modo, as funções se comportam como no 
 modo silecioso - sem exceções retornando false em caso de erro - mas o engine PHP também gera uma mensagem de erro de nível de aviso.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.8.php">Exemplo8.8</a></code>
+
+O Exemplo8.9 produz a mesma saída do Exemplo8.8, mas também gera a mensagem de erro a seguir:
+
+	
+	Warning: PDO::exec(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list' in /var/www/html/Revisao_php-2021/Banco_de_Dados/Exemplo8.9.php on line 6
+	Couldn't insert a row!
+	QL Error=42S22, DB ERROR=1054, Message=Unknown column 'dish_size' in 'field list'
