@@ -82,3 +82,5 @@ porque apenas uma linha (a que você inseriu) foi afetada.
 
 Se algo der errado com INSERT, uma exceção será lançada. O Exemplo8.7 tenta executar uma instrução INSERT que tem nome de coluna inválido. A tabela dishes não contém uma coluna
 chamada dish_size.
+
+	Couldn't insert a row: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list'
