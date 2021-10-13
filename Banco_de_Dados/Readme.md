@@ -83,4 +83,18 @@ porque apenas uma linha (a que você inseriu) foi afetada.
 Se algo der errado com INSERT, uma exceção será lançada. O Exemplo8.7 tenta executar uma instrução INSERT que tem nome de coluna inválido. A tabela dishes não contém uma coluna
 chamada dish_size.
 
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.7.php">Exemplo8.7</a></code>
+
+Já que a chamada a $db->setAttribute() instrui o PDO a lançar uma exceção sempre que houver um erro, o Exemplo8.7 exibe:
+
 	Couldn't insert a row: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list'
+
+O PDO tem três modos de erro: de exceção, silencioso e de aviso. O modo de erro de exceção, que é ativado com uma chamada a $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION), é o melhor para a depuração e o que torna mais fácil assegurar que nenhum problema que ocorrer no banco de dados será deixado de lado. Se Você não
+manipular uma exceção que o PDO gerar, seu programa parará de ser executado.
+
+Os outros dois modos de erro requerem a verificação dos valores de retorno das chamadas de função do PDO para determinarmos se há um erro e usarmos os métodos adicionas do PDO
+para encontrar informações sobre ele.
+
+O modo silencioso é o padrão. Como outros métodos do PDO, se exec() falhar em sua tarefa, ele retornará false. O Exemplo8.8 verifica o valor de retorno de exec() e então usa o
+método erroInfo() do PDO para obter detalhes do problema.
+
