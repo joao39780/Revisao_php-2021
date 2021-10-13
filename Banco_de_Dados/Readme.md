@@ -119,6 +119,11 @@ modo silecioso - sem exceções retornando false em caso de erro - mas o engine 
 O Exemplo8.9 produz a mesma saída do Exemplo8.8, mas também gera a mensagem de erro a seguir:
 
 	
-	Warning: PDO::exec(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list' in /var/www/html/Revisao_php-2021/Banco_de_Dados/Exemplo8.9.php on line 6
+	Warning: PDO::exec(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dish_size' in 'field list' in /var/www/html/Revisao_php-2021/Banco_de_Dados/Exemplo8.9.php 	 on line 6
 	Couldn't insert a row!
 	QL Error=42S22, DB ERROR=1054, Message=Unknown column 'dish_size' in 'field list'
+
+![image](https://user-images.githubusercontent.com/80215258/137224878-90ed3037-6572-4f28-8973-7727d3f0362c.png)
+![image](https://user-images.githubusercontent.com/80215258/137224909-21e873ef-2554-4446-a4d4-659bfcc62b74.png)
+
+Use a função exec() para alterar dados com UPDATE. O Exemplo8.15 mostra algumas instruções UPDATE.
