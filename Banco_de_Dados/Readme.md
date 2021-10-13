@@ -41,3 +41,16 @@ recriá-la. Se uma tabela de banco de dados é como uma planilha. Após criar o 
 
 O comando SQL para a criação de uma tabela é CREATE TABLE. É preciso fornecer o nome da tabela e os nomes e tipos de todas as colunas. O Exemplo8.3 mostra o comando SQL que cria
 a tabela dishes mostrada na figura8.1.
+
+	Exemplo8.3 - Criando a tabela dishes
+	
+		CREATE TABLE dishes (
+			
+			dish_id INTEGER PRIMARY KEY,
+			dish_name VARCHAR(255),
+			price DECIMAL(4,2),
+			is_spicy INT
+		)
+		
+Para criar realmente a tabela, você precisa enviar o comando CREATE TABLE para o banco de dados. Após conectar-se com new PDO(), use a função exec() para enviar o comando como
+mostrado no Exemplo8.4
