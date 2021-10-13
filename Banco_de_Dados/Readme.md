@@ -31,3 +31,5 @@ No Exemplo8.2, se o construtor do PDO lançar uma exceção, o código que estiv
 para o bloco catch, onde uma mesagem de erro será exibida.
 
 Suponhamos que admin fosse a senha errada para o usuário admin. Nesse casso, o Exemplo8.2 exibiria algo como: 
+
+	Could not connect to the database:SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES)
