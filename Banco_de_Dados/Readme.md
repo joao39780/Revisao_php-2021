@@ -24,3 +24,10 @@ A tabela 8.1 lista os prefixos e opções de DSN para alguns dos programas de ba
 Se tudo der certo com o construtor new PDO(), ele retornará um objeto que você usará para interagir com o banco de dados. Se houver um problema na conexão, será lançada uma 
 DOException. Certifique-se de capturar exceções que possam ser lançadas pelo construtor de PDO Para verificar se a conexão foi bem-sucedida antes de prosseguir em seu programa.
 O Exemplo8.2 mostra como fazê-lo.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.2.php">Exemplo8.2</a></code>
+
+No Exemplo8.2, se o construtor do PDO lançar uma exceção, o código que estiver dentro do bloco try após a chamada a new PDO() não será executado. Em vez disso, o engine PHP pulará
+para o bloco catch, onde uma mesagem de erro será exibida.
+
+Suponhamos que admin fosse a senha errada para o usuário admin. Nesse casso, o Exemplo8.2 exibiria algo como: 
