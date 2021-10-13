@@ -98,3 +98,5 @@ para encontrar informações sobre ele.
 O modo silencioso é o padrão. Como outros métodos do PDO, se exec() falhar em sua tarefa, ele retornará false. O Exemplo8.8 verifica o valor de retorno de exec() e então usa o
 método erroInfo() do PDO para obter detalhes do problema.
 
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.8.php">Exemplo8.8</a></code>
