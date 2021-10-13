@@ -105,3 +105,11 @@ O exemplo exibe:
 
 	Couldn't insert a row:
 		SQL Error=42S22, DB Error=1054, Message=Unknown column 'dish_size' in 'field list'
+
+No Exemplo8.8, o valor de exec() é comparado com false com o uso do operador de identidade de sinal triplo para diferenciarmos um erro real (false) de uma consulta bem-sucedida
+que simplesmente não está afetando nenhuma linha. Em seguida, errorInfo() retorna um array de três elementos com informações de erro. O primeiro elemento é um código SQLSTATE.
+Esses códigos de erro estão em grande parte padronizados entre os diferentes programas de banco de dados. Nesse caso, HY000 é um valor abrangente para erros em geral. O segundo
+elemento é um código de erro específico do programa de banco de dados que está sendo usado. O terceiro elemento é uma mesagem textual descrevendo o erro.
+
+O modo de aviso é ativado com a configuração do atributo PDO::ATTR_ERRMODE com PDO::ERRMODE_WARNING, como mostrado no Exemplo8.9. Nesse modo, as funções se comportam como no 
+modo silecioso - sem exceções retornando false em caso de erro - mas o engine PHP também gera uma mensagem de erro de nível de aviso.
