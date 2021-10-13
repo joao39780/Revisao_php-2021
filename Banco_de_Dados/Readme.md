@@ -100,3 +100,8 @@ método erroInfo() do PDO para obter detalhes do problema.
 
 
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.8.php">Exemplo8.8</a></code>
+
+O exemplo exibe:
+
+	Couldn't insert a row:
+		SQL Error=42S22, DB Error=1054, Message=Unknown column 'dish_size' in 'field list'
