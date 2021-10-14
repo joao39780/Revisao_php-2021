@@ -139,3 +139,11 @@ Você também pode usar a função exec() para excluir dados com DELETE. O Exemp
 
 Lembre-se que exec() retorna o número de linhas alteradas ou removidas por uma instrução UPDATE ou DELETE. Use o valor de retorno para saber quantas linhas esse consulta afetou.
 O Exemplo8.21 informa quantas linhas tiveram seus preços alterados por uma consulta UPDATE.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.21.php">Exemplo8.21</a></code>
+
+Se houver duas linhas na tabela dishes cujo preços forem maiores que 3, o Exemplo8.21 exibirá:
+
+	Changed the price of 2 rows.
+	
+![image](https://user-images.githubusercontent.com/80215258/137233110-452136ae-b500-4cc3-8946-3f53652b4b5c.png)
