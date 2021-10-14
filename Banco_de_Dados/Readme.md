@@ -154,6 +154,9 @@ causar um problema semelhante, chamado "ataque de injeção SQL". Considere um f
 de texto chamado new_dish_name no qual o usário pode digitar o nome do novo prato. A chamada a exec() no Exemplo8.25 insere um novo prato na tabela dishes, mas é vulnerável a um
 ataque de injeção SQL.
 
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.25.php">Exemplo8.25</a></code>
+
 Se o valor enviado para new_dish_name for aceitável, como Fried Bean Curd, a consulta será bem-sucedida. As regras comuns do PHP para a interpolação de strings de aspas duplas
 criarão a consulta INSERT INTO dishes(dish_name) VALUES('Fried Bean Curd'), que é válida e aceitável. No entantyo, uma consulta com um apóstrofo pode causar um problema. Se o
 valor enviado para new_dish_name for General Tso's Chicken, a consulta criada será INSERT INTO dishes(dish_name) VALUES('General Tso's Chicken'). Essa consulta confundirá o 
@@ -178,3 +181,17 @@ Com as instruções preparadas, você pode separar a execução de sua consulta 
 interrogação (?) em cada local do código SQL em que quiser que entre um valor. Esse método retornará um objeto PDOStatement. Em seguida você chamará execute() em seu objeto 
 PDOStatement, passando para ele um array de valores que substituirá  os caracteres de ? de espaço reservado. Os valores devem receber as aspas apropriadas antes de serem 
 inseridos na consulta para protegerem contra ataques de injeção SQL. O Exemplo8.26 mostra a versão segura do Exemplo8.25.
+
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.26.php">Exemplo8.26</a></code>
+
+Você não precisa inserir o placeholder entre aspas na consulta. O PDO também se encarrega disso. Se quiser usar múltiplos valores, insira vários placeholders na consulta e no
+array de valores. O Exemplo8.27 mostra uma consulta com três placeholders.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.27.php">Exemplo8.27</a></code>
+
+## Formulário completo de inserção de dados
+O Exemplo8.28 combina os tópicos referentes a banco de dados abordados até agora neste capítulo com o código de manipulação de formulário para construir um programa completo que
+exibe um formulário, válida os dados enviados e os salva em tabela de banco de dados. O formulário exibe elementes de entrada para o nome de um praot, seu preço e para indicar 
+se o prato é apimentado. As informações são inseridas na tabela dishes.
+
