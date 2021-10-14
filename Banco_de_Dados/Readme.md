@@ -154,3 +154,27 @@ causar um problema semelhante, chamado "ataque de injeção SQL". Considere um f
 de texto chamado new_dish_name no qual o usário pode digitar o nome do novo prato. A chamada a exec() no Exemplo8.25 insere um novo prato na tabela dishes, mas é vulnerável a um
 ataque de injeção SQL.
 
+Se o valor enviado para new_dish_name for aceitável, como Fried Bean Curd, a consulta será bem-sucedida. As regras comuns do PHP para a interpolação de strings de aspas duplas
+criarão a consulta INSERT INTO dishes(dish_name) VALUES('Fried Bean Curd'), que é válida e aceitável. No entantyo, uma consulta com um apóstrofo pode causar um problema. Se o
+valor enviado para new_dish_name for General Tso's Chicken, a consulta criada será INSERT INTO dishes(dish_name) VALUES('General Tso's Chicken'). Essa consulta confundirá o 
+programa de banco de dados. Ele deduzirá que o apóstrofo entre Tso e s termina a string, logo, s Chicken' após a segunda aspa simples será um erro de sintaxe indesejado.
+
+E o pior é que um usuário que quiser causar danos problemas poderá digitar um entrada construída especialmente para provocar danos. Considere a entrada incomum a seguir:
+
+	x'); DELETE FROM dishes; INSERT INTO dishes(dish_name) VALUES('y.
+
+Quando ela for interpolada a consulta será:
+
+	INSERT INTO dishes VALUES('x');
+	DELETE FROM dishes; INSERT INTO dishes(dish_name) VALUES('y');
+
+Alguns bancos de dados permitem a passagem de várias consultas separadas por ponto e vírgula na mesma chamada exec(). Neles, a entrada anterior faria a tabela dishes ser d
+destruída: um prato chamado x seria inserido, em seguida todos os pratos seriam excluídos, e então um prato chamado y seria inserido.
+
+Enviando um valor de entrada construído cuidadosamente, um usuário malicioso pode injetar instruções SQL em seu programa de banco de dados. Para evitar este problema, você 
+precisa escapar caracteres especiais (pricipalmente o apóstrofo) em consultas SQL. O PDO fornece um recurso útil chamado instruções preparadas que torna isso fácil.
+
+Com as instruções preparadas, você pode separar a execução de sua consulta em duas etapas. Primeiro, fornecerá ao método prepare() do PDO uma versão da consulta com um ponto de
+interrogação (?) em cada local do código SLQ em que quiser que entre um valor. Esse método retornará um objeto PDOStatement. Em seguida você chamará execute() em seu objeto 
+PDOStatement, passando para ele um array de valores que substituirá  os caracteres de ? de espaço reservado. Os valores devem receber as aspas apropriadas antes de serem 
+inseridos na consulta para protegerem contra ataques de injeção SQL. O Exemplo8.26 mostra a versão segura do Exemplo8.25.
