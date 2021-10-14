@@ -147,3 +147,10 @@ Se houver duas linhas na tabela dishes cujo preços forem maiores que 3, o Exemp
 	Changed the price of 2 rows.
 	
 ![image](https://user-images.githubusercontent.com/80215258/137233110-452136ae-b500-4cc3-8946-3f53652b4b5c.png)
+
+## Inserindo dados em formulários seguramente
+Exibir dados de formulário não sanatizados pode deixar você e seus usuários vulneráveis a um ataque de cross-site scripting. Usar dados não sanatizados em consultas SQL pode 
+causar um problema semelhante, chamado "ataque de injeção SQL". Considere um formulário que permitisse que o usuário sugerisse um novo prato. O formulário contém um elemento
+de texto chamado new_dish_name no qual o usário pode digitar o nome do novo prato. A chamada a exec() no Exemplo8.25 insere um novo prato na tabela dishes, mas é vulnerável a um
+ataque de injeção SQL.
+
