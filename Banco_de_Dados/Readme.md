@@ -175,6 +175,6 @@ Enviando um valor de entrada construído cuidadosamente, um usuário malicioso p
 precisa escapar caracteres especiais (pricipalmente o apóstrofo) em consultas SQL. O PDO fornece um recurso útil chamado instruções preparadas que torna isso fácil.
 
 Com as instruções preparadas, você pode separar a execução de sua consulta em duas etapas. Primeiro, fornecerá ao método prepare() do PDO uma versão da consulta com um ponto de
-interrogação (?) em cada local do código SLQ em que quiser que entre um valor. Esse método retornará um objeto PDOStatement. Em seguida você chamará execute() em seu objeto 
+interrogação (?) em cada local do código SQL em que quiser que entre um valor. Esse método retornará um objeto PDOStatement. Em seguida você chamará execute() em seu objeto 
 PDOStatement, passando para ele um array de valores que substituirá  os caracteres de ? de espaço reservado. Os valores devem receber as aspas apropriadas antes de serem 
 inseridos na consulta para protegerem contra ataques de injeção SQL. O Exemplo8.26 mostra a versão segura do Exemplo8.25.
