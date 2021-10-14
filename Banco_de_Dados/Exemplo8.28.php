@@ -1,6 +1,6 @@
 <?php
 
-require 'FormHelper.php';
+require 'Exemplo7.29.php';
 require 'Exemplo8.2.php';
 
 //Define exceções para erros do banco de dados
@@ -35,7 +35,7 @@ function show_form($errors = array()){
 
 	//A exibição do código HTML e do formulário está em um arquivo separado para
 	//melhorar o entendimento
-	include 'insert-form.php';
+	include 'Exemplo8.29.php';
 }
 
 function validate_form(){
@@ -64,7 +64,7 @@ function validate_form(){
 function process_form($input){
 
 	//Acessa a variável global db dentro dessa função
-	$global $db;
+	global $db;
 
 	//Define o valor de $is_spicy de acordo com a caixa de seleção
 	if($input['is_spicy'] = 'yes'){
@@ -82,7 +82,7 @@ function process_form($input){
 		$stmt->execute(array($input['dish_name'], $input['price'], $is_spicy));
 
 		//Tell the user that we added a dish
-		print 'Added' . htmlentities($input['dish_name']) . 'to the database';
+		print 'Added ' . htmlentities($input['dish_name']) . 'to the database';
 	}catch(PDOException $e){
 		print "Couldn't add you dish to the database";
 	}
