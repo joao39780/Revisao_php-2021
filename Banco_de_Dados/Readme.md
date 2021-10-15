@@ -195,3 +195,6 @@ O Exemplo8.28 combina os tópicos referentes a banco de dados abordados até ago
 exibe um formulário, válida os dados enviados e os salva em tabela de banco de dados. O formulário exibe elementes de entrada para o nome de um praot, seu preço e para indicar 
 se o prato é apimentado. As informações são inseridas na tabela dishes.
 
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.28.php">Exemplo8.28</a></code>
+
+O Exemplo8.28 tem a mesma estrutura básica dos exemplos de formulário do capítulo7: funções para exibição, validação e processamento
