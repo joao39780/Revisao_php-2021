@@ -206,7 +206,7 @@ banco de dados e as linhas seguintes verificam se a conexão foi bem-sucedida e 
 A função show_form() exibe o código HTML do formulário definido no arquivo insert-form.php. Esse arquivo é mostrado no Exemplo8.29.
 
 
-<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.28.php">Exemplo8.28</a></code>
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.29.php">Exemplo8.29</a></code>
 
 Com exceção da conexão, o resto da interação com o banco de dados se encontra na função process_form(). Primeiro, a linha global $db nos permite referenciar a variável de 
 conexão com o banco de dados dentro da função com o uso de db em vez da notação mais complicada $GLOBALS['db']. Em seguida, já que a coluna is_spicy da tabela contém 1 nas
@@ -222,3 +222,33 @@ haver no nome do prato. Já que prepare() e execute() estão dentro de um bloco 
 Para recuperar informações no banco de dados, use o método query(). Você deve passar para o método uma consulta SQL feita ao banco de dados. Ele retornará um objeto PDOStatement
 que dará acesso as linhas recuperadas. Sempre que você chamar o método fetch() desse objeto, obterá a próxima retornada pela consulta. Quando não houver mais linhas, fetch()
 retornará um valor avaliado como falso, perfeito para ser usado em um loop while(). Isso é mostrado no Exemplo8.30.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.30.php">Exemplo8.30</a></code>
+
+Na primeira vez que o código percorre o loop while(), fetch retorna um array contendo walnut Bun e 1. Esse array é atribuido a $row. Já que um array com elementos é avaliado 
+como verdadeiro, o código do loop while é executado exibindo os dados da primeira linha retornada pela consulta SELECT. Quando não há mais linhas para retornar, fetch() retorna
+um valor que é avaliado como falso e o loop while() termina.
+
+Por padrão fetch retorna um array com chaves tanto numéricas quanto de string. As chaves numéricas, começando em 0, contêm o valor de cada coluna na linha. As chaves de string
+fazem o mesmo, com os nomes das chaves configurados com os nomes das colunas. No Exemplo8.30, os mesmos resultados poderiam ser exibidos com o uso de $row[0] e $row[1].
+
+Para saber quantas linhas uma consulta SELECT retornou, a única opção segura é recuperar todas as linhas e contá-las. O objeto PDOStatement fornece um método rowCount(), mas ele
+não funciona com todos os bancos de dados. Se você tiver um número pequeno de linhas e quiser usa-lás em seu programa, utilize o método fetchAll() para inseri-las em um array 
+sem executar um loop, como mostrado no Exemplo8.31.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.31.php">Exemplo8.31</a></code>
+
+Se o número de linhas for tão grande ao ponto de tornar inviável recuperar todas as linhas, solicite ao seu programa de banco de dados que conte as linhas em seu nome com a 
+função COUNT() do SQL. Por exemplo, SELECT COUNT( * ) FROM DISHES retorna uma linha com uma coluna cujo valor é o número de linhas da tabela inteira.
+
+![image](https://user-images.githubusercontent.com/80215258/137813021-61df0047-e158-46af-bd93-e478e2a8a904.png)
+![image](https://user-images.githubusercontent.com/80215258/137813046-a8f77394-2c6b-4f12-beb8-6b5afbb907a5.png)
+![image](https://user-images.githubusercontent.com/80215258/137813080-83ddca2d-d989-4378-b399-f6016d88a627.png)
+
+Se você estiver esperando apenas uma linhas ser retornada por uma consulta, pode encadear sua chamada a fetch() no fim de query(). O Exemplo8.37 usa uma função fetch() encadeada
+para exibir o item menos caro da tabela dishes.
+
+![image](https://user-images.githubusercontent.com/80215258/137813925-06141554-18b3-471c-b792-e236fe444f7c.png)
+![image](https://user-images.githubusercontent.com/80215258/137813939-8eceddeb-065f-4c1f-8c9a-de83b1e0fa91.png)
+
+
