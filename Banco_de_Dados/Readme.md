@@ -197,4 +197,28 @@ se o prato é apimentado. As informações são inseridas na tabela dishes.
 
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.28.php">Exemplo8.28</a></code>
 
-O Exemplo8.28 tem a mesma estrutura básica dos exemplos de formulário do capítulo7: funções para exibição, validação e processamento
+O Exemplo8.28 tem a mesma estrutura básica dos exemplos de formulário do capítulo7: funções para exibição, validação e processamento do formulário com alguma lógica global que
+determina que função será chamada. As duas partes são o código global, que estabelece a conexão com o banco de dados, e as atividades relacionadas a banco de dados de process_form().
+
+O código de preparação do banco de dados vem após as instruções require e antes de if($_ SERVER['REQUEST_METHOD'] == 'POST'). A Chamada a new PDO() estabelece uma conexao de 
+banco de dados e as linhas seguintes verificam se a conexão foi bem-sucedida e especificam o modo de exceção para a manipulação de erros.
+
+A função show_form() exibe o código HTML do formulário definido no arquivo insert-form.php. Esse arquivo é mostrado no Exemplo8.29.
+
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.28.php">Exemplo8.28</a></code>
+
+Com exceção da conexão, o resto da interação com o banco de dados se encontra na função process_form(). Primeiro, a linha global $db nos permite referenciar a variável de 
+conexão com o banco de dados dentro da função com o uso de db em vez da notação mais complicada $GLOBALS['db']. Em seguida, já que a coluna is_spicy da tabela contém 1 nas
+linhas de pratos apimentados e 0 nas linhas de pratos não apimentados, a cláusula if() de process_form() atribui o valor apropriado à variável local $is_spicy de acordo com
+o que foi enviado em $input['is_spicy'].
+
+Depois vem as chamadas a prepare() e execute(), que inserem realmente as novas informações no banco de dados. A instrução INSERT tem três placeholders que são preenchidos pelas
+variáveis $input['dish_name'], $input['price'] e $is_spicy. Nenhum valor é necessário para a coluna dish_id porque o SQLite a preenche automaticamente. Para concluir, 
+process_form() exibe uma mensagem para informar ao usuário que o prato foi inserido. A função htmlentities() nos protege contra qualquer tag HTML ou código javascript que possa
+haver no nome do prato. Já que prepare() e execute() estão dentro de um bloco try, se algo der errado, uma mensagem de erro alternativa será exibida.
+
+## Recuperando dados no banco de dados
+Para recuperar informações no banco de dados, use o método query(). Você deve passar para o método uma consulta SQL feita ao banco de dados. Ele retornará um objeto PDOStatement
+que dará acesso as linhas recuperadas. Sempre que você chamar o método fetch() desse objeto, obterá a próxima retornada pela consulta. Quando não houver mais linhas, fetch()
+retornará um valor avaliado como falso, perfeito para ser usado em um loop while(). Isso é mostrado no Exemplo8.30.
