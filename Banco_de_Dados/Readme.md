@@ -287,4 +287,19 @@ enviado.
 
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.45.php">Exemplo8.45</a></code>
 
-Idepende
+Idependente de dish_search ser Fried Bean Curd ou General Tso's Chicken, o placeholder interpolará o valor na consulta apropriadamente. Porém , e se dish_search for %chicken% ?
+Então, a consulta será **SELECT dish_name, price FROM dishes WHERE dish_name LIKE %chicken**. Ela encontrará todas as linhas que contenham a string chicken e não apenas aquelas
+em que dish_name for extamente %chicken%.
+
+![image](https://user-images.githubusercontent.com/80215258/137983549-8868c2b1-3c67-4667-a347-c1f033025f1c.png)
+![image](https://user-images.githubusercontent.com/80215258/137983591-87505ef6-dc0b-4d06-8d23-751552bb03c9.png)
+
+Para impedir que curingas SQL enviados em formulários sejam ativados nas consultas, você deve deixar de lado o conforto e simplicidade dos placeholders e usar duas outras 
+funções: **quote** do PDO e a função do PHP interna **strtr()**. Primeiro, chame **quote** no valor enviado.
+
+Essa função executará a mesma operação de aspas executada pelo palceholder. Por exemplo, ela transforma General Tso's Chicken em 'General Tso' 's Chicken'. A próxima etapa é 
+usar strtr() para escapar os curingas SQL % e _ com uma barra invertida. O valor com aspa inserida e com o curinga escapado poderá então ser usado seguramente em uma consulta.
+
+O Exemplo8.50 mostra como usar quote() e strtr() para tornar um valor enviado seguro para uma cláusula **WHERE**.
+
+
