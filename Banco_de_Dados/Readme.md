@@ -269,3 +269,18 @@ colunas.
 
 O Exemplo8.43 mostra esses estilos de busca em ação.
 
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.43.php">Exemplo8.43</a></code>
+
+Se você quiser usar um estilo de busca alternativo repetidamente, pode definir o padrão em instrução específica para todas as consultas que emitir determinada conexão. Para 
+definir o padrão para uma instrução, chame setFetchMode() em seu objeto PDOStatement, como mostrado no Exemplo8.44.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.44.php">Exemplo8.44</a></code>
+
+## Recuperando dados de formulários seguramente
+É possivel usar placeholders com instruções SELECT da mesma forma que eles são usados com as instruções INSERT, UPDATE ou DELETE. Em vez de usar query() diretamente, é só 
+empregar prepare() e execute(), mas forneça para prepare() uma instrução SELECT.
+
+No entanto, quando você usar dados enviados em formulários ou outras entradas exterenas na cláusula **WHERE** de uma instrução SELECT, UPDATE ou DELETE, deve tomar muito cuidado
+para assegurar que curingas SQL sejam escapados apropriadamente. Considere um formulário de busca contendo um elemento texto chamado dish_search em que o usuário pudesse digitar
+o nome de um prato que ele estivesse procurando. A chamada a execute() no Exemplo8.45 usa placeholders para evitar confusões com possiveis aspas simples existentes no valor 
+enviado.
