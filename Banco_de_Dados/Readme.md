@@ -284,3 +284,7 @@ No entanto, quando você usar dados enviados em formulários ou outras entradas 
 para assegurar que curingas SQL sejam escapados apropriadamente. Considere um formulário de busca contendo um elemento texto chamado dish_search em que o usuário pudesse digitar
 o nome de um prato que ele estivesse procurando. A chamada a execute() no Exemplo8.45 usa placeholders para evitar confusões com possiveis aspas simples existentes no valor 
 enviado.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.45.php">Exemplo8.45</a></code>
+
+Idepende
