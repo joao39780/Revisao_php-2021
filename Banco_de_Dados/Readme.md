@@ -302,4 +302,8 @@ usar strtr() para escapar os curingas SQL % e _ com uma barra invertida. O valor
 
 O Exemplo8.50 mostra como usar quote() e strtr() para tornar um valor enviado seguro para uma cláusula **WHERE**.
 
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.50.php">Exemplo8.50</a></code>
 
+## Formulário completo de recuperação de dados
+O Exemplo8.53 é outro programa de banco de dados e formulário completo. Ele apresenta um formulário de busca então exibe uma tabela HTML com todas as linhas da tabela dishes que
+atendem aos critérios da pesquisa. Como o Exemplo8.28, esse exemplo presume que a classe auxiliar do formulário foi definida em um arquivo FormHelper.php separado.
