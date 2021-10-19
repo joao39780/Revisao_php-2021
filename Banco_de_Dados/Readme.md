@@ -241,6 +241,8 @@ sem executar um loop, como mostrado no Exemplo8.31.
 Se o número de linhas for tão grande ao ponto de tornar inviável recuperar todas as linhas, solicite ao seu programa de banco de dados que conte as linhas em seu nome com a 
 função COUNT() do SQL. Por exemplo, SELECT COUNT( * ) FROM DISHES retorna uma linha com uma coluna cujo valor é o número de linhas da tabela inteira.
 
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Banco_de_Dados/Exemplo8.37.php">Exemplo8.37</a></code>
+
 ![image](https://user-images.githubusercontent.com/80215258/137813021-61df0047-e158-46af-bd93-e478e2a8a904.png)
 ![image](https://user-images.githubusercontent.com/80215258/137813046-a8f77394-2c6b-4f12-beb8-6b5afbb907a5.png)
 ![image](https://user-images.githubusercontent.com/80215258/137813080-83ddca2d-d989-4378-b399-f6016d88a627.png)
@@ -251,4 +253,19 @@ para exibir o item menos caro da tabela dishes.
 ![image](https://user-images.githubusercontent.com/80215258/137813925-06141554-18b3-471c-b792-e236fe444f7c.png)
 ![image](https://user-images.githubusercontent.com/80215258/137813939-8eceddeb-065f-4c1f-8c9a-de83b1e0fa91.png)
 
+## Alterando o formato das linhas recuperadas
+Até agora, fetch retornou as linhas do banco de dados como arrays indexados tanto numericamente quanto na forma de strings. Isso proporcionou uma interpolação fácil e concisa de
+valores em strings de aspas duplas - porém, também pode ser problemático. Tentar se lembrar, por exemplo, da coluna retornada pela consulta **SELECT** que corresponde ao 
+elemento 6 do array de resultados pode ser difícil e propenso a erros. Alguns nomes das colunas em formatos string podem requerer aspas para serem interpolados apropriadamente. 
+E fazer o engine PHP definir índices numéricos e de string será um exagero se você não precisar dos dois. Felizmente, o PDO nos permite especificar que cada linha do resultado
+seja distribuída de uma maneira difirente. _Passe um estilo de busca alternativo_ como primeiro argumento para fetch() ou fetchAll() e obterá a linha apenas no formato de um
+array numérico, ou na forma de um array de strings, ou como um objeto.
+
+Para obter uma linha na forma de um array apenas com chaves numéricas, passe PDO::FETCH_NUM como primeiro argumento para fetch() ou fetchAll. Para obter uma linha somente com 
+chaves no formato string, use PDO::FETCH_ASSOC.
+
+Para obter uma linha como um objeto em vez de como um array, use PDO::FETCH_OBJ. O objeto retornado para cada linha terá nomes de propriedades correspondentes ao nomes das 
+colunas.
+
+O Exemplo8.43 mostra esses estilos de busca em ação.
 
