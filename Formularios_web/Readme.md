@@ -20,3 +20,41 @@ de solicitação e resposta faz com que o navegador exiba o formulário. No segu
 enviado e o navegador exibe os resultados.
 
 ![image](https://user-images.githubusercontent.com/80215258/148846121-aeab65df-175b-4f26-b2e6-7cc6024f07e7.png)
+
+A resposta à primeira solicitação é algum HTML para um formulário. A figura7.2 mostra o que o navegador exibe quando recebe essa resposta.
+
+![image](https://user-images.githubusercontent.com/80215258/149013554-de0b0dfc-0278-45d9-af58-22a02dc9678d.png)
+
+A resposta à segunda solicitação é o resultado do processamento dos dados do formulário enviado. A figura7.3 mostra a saída quando o 
+formulário é enviado com Susannah digitação na caixa de texto.
+
+![image](https://user-images.githubusercontent.com/80215258/149014033-253039aa-04de-47b6-89d5-a3b5244728d4.png)
+
+## Variáveis de servidor úteis
+
+Além de de **PHP_SELF** e **REQUEST_METHOD**, o array autoglobal **$_SERVER_** contém vários elementos úteis que fornecem informações 
+sobre o servidor web e a solicitação atual. A tabela7.1 lista alguns deles.
+
+|Elemento      |Exemplo                  |
+|------------- |-------------------------|
+| QUERY_STRING | category=kitchen&price=5|
+| PATH_INFO    | /browse                 |
+| SERVER_NAME  | www.example.com         |
+| DOCUMENT_ROOT| /usr/local/htdocs       |
+| REMOTE_ADDR  | 175.56.28.3             |
+| REMOTE_HOST  | pool0560.cvx.dialup.net |
+
+
+## Acessando parâmetros de formulário
+No início de cada pedido, o mecanismo PHP configura alguns arrays autoglobais que contêm valores de quaisquer parâmetros enviados em um formulário ou passados na URL. 
+Os parâmetros de URL e de formulário do método **GET** são colocados em arrays **<code>$_GET</code>**. Os parâmetros de formulário do método **POST** são colocados em
+arrays  **<code>$_POST</code>**.
+
+A URL http://www.example.com/catalog.php?product_id=21&category=fryingpan coloca dois valores em **<code>$_GET</code>**:
+
+-  **<code>$_GET['product_id']</code>** está configurado para **21**
+-  **<code>$_GET['category']</code>** está configurado para **fryingpan**
+
+O envio do formulário no exemplo7.2 faz com que os mesmos valores sejam colocados em **<code>$_POST</code>**, supondo que 21 seja inserido na caixa de texto e Frying Pan
+selecionado no menu.
+
