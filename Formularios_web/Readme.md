@@ -61,4 +61,13 @@ selecionado no menu.
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.2/Exemplo7.2.php">Exemplo7.2</a></code>
 
 O Exemplo7.3 incorpora o formulário do Exemplo7.2 em um programa PHP completo que imprime os valores apropriados de **<code>$_POST</code>** depois de exibir o formulário.
-Como o atributo **action** da tag **FORM** no Exemplo7.3 é **catalog.php**, você precisa salvar o programa em um arquivo chamado **catalog.php** em seu servidor web. Se você salvá-lo em um arquivo com o nome diferente, ajuste o atributo action apropriadamente.
+Como o atributo **action** da tag **FORM** no Exemplo7.3 é **catalog.php**, você precisa salvar o programa em um arquivo chamado **catalog.php** em seu servidor web. Se você 
+salvá-lo em um arquivo com o nome diferente, ajuste o atributo action apropriadamente.
+
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.3.php">Exemplo7.3</a></code>
+
+Para evitar uma mensagem de aviso do PHP quando nemhuma variável POST for enviada, o Exemplo7.3 utiliza o operado null coalesce **<code>??</code>.**
+
+O código **<code>$_POST['product_id'] ?? ''</code>** produzirá o que quer que haja em **<code>$_POST['product_id']</code>** se existir algo aí; caso contrário, produzirá uma
+string 
