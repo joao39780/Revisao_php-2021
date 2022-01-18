@@ -58,3 +58,8 @@ A URL http://www.example.com/catalog.php?product_id=21&category=fryingpan coloca
 O envio do formulário no exemplo7.2 faz com que os mesmos valores sejam colocados em **<code>$_POST</code>**, supondo que 21 seja inserido na caixa de texto e Frying Pan
 selecionado no menu.
 
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.2/Exemplo7.2.php">Exemplo7.2</a></code>
+
+O Exemplo7.3 incorpora o formulário do Exemplo7.2 em um programa PHP completo que imprime os valores apropriados de **<code>$_POST</code>** depois de exibir o formulário.
+Como o atributo **action** da tag <form> no Exemplo7.3 é **catalog.php**, você precisa salvar o programa em um arquivo chamado **catalog.php** em seu servidor web. Se você
+salvá-lo em um arquivo com o nome diferente, ajuste o atributo action apropriadamente.
