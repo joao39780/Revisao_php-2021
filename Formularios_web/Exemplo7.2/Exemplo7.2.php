@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<form method="POST" action="catalog.php">
+<form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
 Product Id:
 <br>
 <input type="text" name="product_id">
@@ -18,5 +18,11 @@ Product Id:
 </select>
 <input type="submit" value="submit">
 </form>
+<hr>
+Here are the submitted values:
+</br>
+ID: <?php echo $_POST['product_id'] ?? '' ?>
+</br>
+CATEGORY: <?php echo $_POST['category'] ?? '' ?>
 </body>
 </html>
