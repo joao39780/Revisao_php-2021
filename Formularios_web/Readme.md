@@ -70,4 +70,9 @@ salvá-lo em um arquivo com o nome diferente, ajuste o atributo action apropriad
 Para evitar uma mensagem de aviso do PHP quando nemhuma variável POST for enviada, o Exemplo7.3 utiliza o operado null coalesce **<code>??</code>.**
 
 O código **<code>$_POST['product_id'] ?? ''</code>** produzirá o que quer que haja em **<code>$_POST['product_id']</code>** se existir algo aí; caso contrário, produzirá uma
-string 
+string vazia (''). Sem ela você veria mensagens como **PHP Notice: Undefined index: product_id** quando a página fosse recuperada pelo método **GET** sem que nenhuma variável
+**POST** tivesse sido definida.
+
+Um elemento de formulário que tenha vários valores precisa de um nome que termine em []. Isso informa ao engine PHP que ele deve tratar os valores como elementos de um array.
+Os valores do menu <select> que estão sendo enviados no Exemplo7.4 foram inseridos em $_POST['lunch'].
+  
