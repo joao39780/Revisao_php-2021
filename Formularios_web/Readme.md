@@ -67,6 +67,11 @@ salvá-lo em um arquivo com o nome diferente, ajuste o atributo action apropriad
 
  <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.3.php">Exemplo7.3</a></code>
 
-a
+Um elemento de formulário que tenha vários valores precisa de um nome que termine em []. Isso iformará ao engine PHP que ele deve tratar os valores como elementos de um array.
+Os valores do menu select que estão sendo enviados no Exemplo7.4 foram inseridos em <code>$_POST['lunch']</code>.
 
 <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.4.php">Exemplo7.4</a></code>
+
+Se o formulário do Exemplo7.4 for enviado com as opções **Chicken Bun** e **Bird-Nest Bun** selecionadas, <code>$_POST['lunch']</code> será um array de dois elementos com os
+valores chicken e nest. Você pode acessar esses valores usando a sintaxe comum dos arrays multidimensionais. O Exemplo7.5 incorpora o formulário do Exemplo7.4 a um programa
+completo que exibe cada valor selecionado no menu. 
