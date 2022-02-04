@@ -76,4 +76,26 @@ string vazia (''). Sem ela você veria mensagens como **PHP Notice: Undefined in
 Um elemento de formulário que tenha vários valores precisa de um nome que termine em []. Isso informa ao engine PHP que ele deve tratar os valores como elementos de um array.
 Os valores do menu <select> que estão sendo enviados no Exemplo7.4 foram inseridos em $_POST['lunch'].
   
-<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.3.php">Exemplo7.3</a></code>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.3.php">Exemplo7.3</a></code>
