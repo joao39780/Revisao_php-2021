@@ -94,5 +94,13 @@ chicken e nest):
 Como vimos no Exemplo4.6, essa sintaxe adiciona um elemento ao fim do array.
 
 # Processamento de formulários com funções
-O formulário básico do Exemplo7.1 pode ficar mais flexível  se inserirmos o código de exibição e o código de processamento em funções separadas. O Exemplo7.6 é uma versão do
-Exemplo7.1 com funções.
+O formulário básico do Exemplo7.7 pode ficar mais flexível  se inserirmos o código de exibição e o código de processamento em funções separadas. O Exemplo7.6 é uma versão do
+Exemplo7.6 com funções.
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.6.php">Exemplo7.6</a></code>
+
+Para alterar o formulário ou o que ocorre quando ele é enviado, é so mudar o corpo de process_form() ou show_form().
+
+Dividir o processamento e a exibição do formulário em funções também facilita adicionar um estágio de validação de dados. A validação de dados, abordada com detalhes em 
+"validação de dados", é uma parte essencial de qualquer aplicativo web que aceite entradas provinientes de um formulário. Os dados devem ser validados após o formulário ser
+enviados, porém isso precisa ocorrer antes dele ser processado. O Exemplo7.7 adiciona uma função de validação ao Exemplo7.6.
