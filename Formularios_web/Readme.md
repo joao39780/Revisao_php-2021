@@ -75,3 +75,24 @@ Os valores do menu select que estão sendo enviados no Exemplo7.4 foram inserido
 Se o formulário do Exemplo7.4 for enviado com as opções **Chicken Bun** e **Bird-Nest Bun** selecionadas, <code>$_POST['lunch']</code> será um array de dois elementos com os
 valores chicken e nest. Você pode acessar esses valores usando a sintaxe comum dos arrays multidimensionais. O Exemplo7.5 incorpora o formulário do Exemplo7.4 a um programa
 completo que exibe cada valor selecionado no menu. 
+
+<code><a href="https://github.com/joao39780/Revisao_php-2021/blob/master/Formularios_web/Exemplo7.5.php">Exemplo7.5</a></code>
+
+Com **chicken Bun** e **bird-nest bun** selecionados no menu, o Exemplo7.5 exibirá
+(após o formulário):
+    
+    Selected buns:
+    You want a chicken bun.
+    You want a nest bun.
+
+Podemos considerar que um elemento chamado lunch[] será convertido no código PHP a seguir quando o formulário for enviado (supondo que os valores enviados no elemento sejam
+chicken e nest):
+
+    $_POST['lunch'][] = 'chicken';
+    $_POST['lunch'][] = 'nest';
+
+Como vimos no Exemplo4.6, essa sintaxe adiciona um elemento ao fim do array.
+
+# Processamento de formulários com funções
+O formulário básico do Exemplo7.1 pode ficar mais flexível  se inserirmos o código de exibição e o código de processamento em funções separadas. O Exemplo7.6 é uma versão do
+Exemplo7.1 com funções.
